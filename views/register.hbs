@@ -1,0 +1,58 @@
+<h1>Register</h1>
+<form method="post" onsubmit="return validateForm()">
+  <fieldset class="form-group">
+    <label for="username" class="col-2 control-label">
+      Username (Email): *
+    </label>
+    <input
+      name="username"
+      id="username"
+      required
+      type="email"
+      placeholder="email@example.com"
+      class="form-control"
+    />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="password" class="col-2 control-label">
+      Password: *
+    </label>
+    <input
+      name="password"
+      id="password"
+      type="password"
+      required
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      class="form-control"
+    />
+    <small class="form-text text-muted">
+      Must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.
+    </small>
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="confirm" class="col-2 control-label">
+      Confirm Password: *
+    </label>
+    <input
+      name="confirm"
+      id="confirm"
+      type="password"
+      required
+      class="form-control"
+    />
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+<script>
+  function validateForm() {
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("confirm").value;
+
+    if (password !== confirm) {
+      alert("Passwords do not match.");
+      return false;
+    }
+    return true;
+  }
+</script>

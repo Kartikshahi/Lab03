@@ -1,0 +1,48 @@
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #efef13; /* Light background color for the whole page */
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+/* Jumbotron Header Styling */
+.jumbotron {
+  background-color: #007bff;
+  color: #dc2727;
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+.jumbotron h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 1.5rem;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #343a40;
+  color: white;
+}
+
+footer p {
+  margin: 0;
+}

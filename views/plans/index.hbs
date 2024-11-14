@@ -1,0 +1,33 @@
+<h1>{{title}}</h1>
+
+{{!-- CREATE button --}}
+{{#if user}}
+  <a href="/plans/add" class="btn btn-success mb-3">Add a New Fitness Plan</a>
+{{/if}}
+
+{{!-- Table to display all fitness plans --}}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Plan Name</th>
+            <th>Start Date</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dataset}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{toShortDate this.startDate}}</td>
+            <td>{{this.planType}}</td>
+            <td>
+                {{#if ../user}}
+                <a href="/plans/edit/{{this._id}}" class="btn btn-primary">Edit</a>
+                <a href="/plans/delete/{{this._id}}" onclick="return confirmDeletion()" class="btn btn-danger">Delete</a>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

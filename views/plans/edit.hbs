@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+<form method="POST">
+  {{! Input names should match the fitness plan schema }}
+  <fieldset class="mb-3">
+    <label for="name" class="col-2">
+      Plan Name:
+    </label>
+    <input name="name" id="name" required value="{{plan.name}}" class="form-control" />
+  </fieldset>
+  <fieldset class="mb-3">
+    <label for="startDate" class="col-2">
+      Start Date:
+    </label>
+    <input name="startDate" id="startDate" required type="date" value="{{toShortDate plan.startDate}}" class="form-control" />
+  </fieldset>
+  <fieldset class="mb-3">
+    <label for="planType" class="col-2">
+      Type:
+    </label>
+    <select name="planType" id="planType" class="form-control">
+      <option value="strength" {{#ifEquals plan.planType "strength"}}selected{{/ifEquals}}>Strength</option>
+      <option value="cardio" {{#ifEquals plan.planType "cardio"}}selected{{/ifEquals}}>Cardio</option>
+      <option value="flexibility" {{#ifEquals plan.planType "flexibility"}}selected{{/ifEquals}}>Flexibility</option>
+      <option value="balance" {{#ifEquals plan.planType "balance"}}selected{{/ifEquals}}>Balance</option>
+    </select>
+  </fieldset>
+  <button class="btn btn-primary mt-3">Save Plan</button>
+</form>
